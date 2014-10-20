@@ -1,0 +1,13 @@
+package serverClasses;
+
+import java.awt.HeadlessException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+import javax.swing.JOptionPane;
+
+public class IpFinder {
+	public static void main(String[] args) throws HeadlessException, UnknownHostException{
+		JOptionPane.showMessageDialog(null, InetAddress.getLocalHost().getHostAddress());
+	}
+}
