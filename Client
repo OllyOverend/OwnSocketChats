@@ -1,4 +1,4 @@
-package serverClasses;
+package clientSide;
 
 import java.io.*;
 import java.net.*;
@@ -15,12 +15,14 @@ public class Client extends JFrame {
 	private ObjectOutputStream output;
 	private ObjectInputStream input;
 	private String message = "";
-	private String serverIP;
+	private String serverIP,myname = "Unkown";
 	private Socket connection;
-
+	
 	// constructor
-	public Client(String host) {
+	public Client(String host,String name) {
 		super("Client mofo!");
+		
+		myname = name;
 		serverIP = host;
 		userText = new JTextField();
 		userText.setEditable(false);
@@ -99,9 +101,9 @@ public class Client extends JFrame {
 	// send messages to server
 	private void sendMessage(String message) {
 		try {
-			output.writeObject("CLIENT - " + message);
+			output.writeObject(myname + " : " + message);
 			output.flush();
-			showMessage("\nCLIENT - " + message);
+			showMessage("\n" + myname + " : " + message);
 
 		} catch (IOException ioException) {
 			chatWindow.append("\n something messed up sending message!?");
