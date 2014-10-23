@@ -1,4 +1,4 @@
-package serverClasses;
+package clientSide;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -6,8 +6,9 @@ import javax.swing.JOptionPane;
 public class ClientTest {
 	public static void main(String[] args){
 		Client charlie;
+		String myname = JOptionPane.showInputDialog("CLIENT: enter nickname");
 		String ip = JOptionPane.showInputDialog("input host ip");
-		charlie = new Client(ip);
+		charlie = new Client(ip,myname);
 		charlie.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		charlie.startRunning();
 	}
