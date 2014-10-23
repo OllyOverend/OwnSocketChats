@@ -1,0 +1,26 @@
+package serverClasses;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+
+public class Clients {
+	ObjectOutputStream output;
+	ObjectInputStream input;
+	Socket connection;
+
+	
+	
+	public Clients() {
+		
+	}
+	
+
+	public void setupConnections() throws IOException {
+		output = new ObjectOutputStream(connection.getOutputStream());
+		output.flush();
+		input = new ObjectInputStream(connection.getInputStream());
+	}
+	
+}
