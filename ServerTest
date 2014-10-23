@@ -1,10 +1,12 @@
 package serverClasses;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
-public class SeverTest {
+public class ServerTest {
 	public static void main(String[] args) {
-		Server sally = new Server();
+		String name = JOptionPane.showInputDialog("SERVER: enter your nickname");
+		Server sally = new Server(name);
 		sally.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		sally.startRunning();
 	}
